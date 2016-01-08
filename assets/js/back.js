@@ -5,8 +5,12 @@ $('#bclear').click(function(){
 	$('#passkey').val('');
 });
 
+
+
 $('#bsave').click(function(){
+	
 	event.preventDefault();
+
 	var passwd = $('#passkey').val();
 
 	if (passwd == "") {
@@ -40,6 +44,7 @@ $('#bsave').click(function(){
 				                success:function(result){
 				                	$('#mod-content').html('');
 				                    $('#mod-content').html(result);
+				                 
 				                }, 
 				                error: function(data){
 				                	
@@ -58,6 +63,7 @@ $('#bsave').click(function(){
 				                success:function(result){
 				                	$('#mod-content').html('');
 				                    $('#mod-content').html(result);
+				        
 				                }, 
 				                error: function(data){
 				                	
@@ -80,6 +86,8 @@ $('#bsave').click(function(){
 	};
 
 });
+
+
 
 $("#passkey").on({
   keydown: function(e) {

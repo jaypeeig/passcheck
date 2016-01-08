@@ -28,23 +28,22 @@ class Main extends CI_Controller {
 
 		echo "
 			<div class = 'row'>
-				<div class = 'col-sm-6'>
-				<p class='text-primary'>Out of the {$total} passwords people gave so far are:</p>
+				<div class = 'well'>
+				<h4 class='text-primary'>   Out of the {$total} passwords people gave so far are:</h4>
 				<ul>
-					<li>{$codew}% WEAK</li>
-					<li>{$codea}% ACCEPTABLE</li>
-					<li>{$codeg}% GOOD</li>
-					<li>{$codes}% STRONG</li>
-					<li>{$coded}% DUPLICATES</li>
+					<li class='text-primary'>{$codeg}% GOOD</li>
+					<li class='text-success'>{$codes}% STRONG</li>
+					<li class='text-warning'>{$codew}% WEAK</li>
+					<li class='text-warning'>{$codea}% ACCEPTABLE</li>
+					<li class='text-danger'>{$coded}% DUPLICATES</li>
 				</ul>
 				</div>
-				<div class = 'col-sm-6'></div>
+				</div>
 			</div>
 		";
 
 
 	}
-
 
 
 
@@ -142,7 +141,6 @@ class Main extends CI_Controller {
 			}
 			
 	}
-
 
 
 	public function dupquery(){
