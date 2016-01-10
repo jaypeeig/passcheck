@@ -1,5 +1,8 @@
 
+
 $(document).ready(function(){
+
+const myserver = "http://localhost/passcheck/";
 
 $('#bclear').click(function(){
 	$('#passkey').val('');
@@ -21,7 +24,7 @@ $('#bsave').click(function(){
 		$('#message').html('');
 			$.ajax({
                 type: "POST",
-                url:"http://localhost/passcheck/main/validate",
+                url:myserver + "main/validate",
                 data: {password: passwd, type: 'saving'},
                 success:function(result){
                    
@@ -39,7 +42,7 @@ $('#bsave').click(function(){
 					    	$('#report').modal('show');
 					    	$.ajax({
 				                type: "POST",
-				                url:"http://localhost/passcheck/main/graph",
+				                url:myserver + "main/graph",
 				                data: {password: passwd},
 				                success:function(result){
 				                	$('#mod-content').html('');
@@ -58,7 +61,7 @@ $('#bsave').click(function(){
 					    	$('#report').modal('show');
 					    	$.ajax({
 				                type: "POST",
-				                url:"http://localhost/passcheck/main/graph",
+				                url:myserver + "main/graph",
 				                data: {password: passwd},
 				                success:function(result){
 				                	$('#mod-content').html('');
@@ -114,7 +117,7 @@ $('#passkey').keyup(function(){
 		    delayTimer = setTimeout(function() {
 		        $.ajax({
                 type: "POST",
-                url:"http://localhost/passcheck/main/show_messages",
+                url:myserver + "main/show_messages",
                 data: {password: passwd},
                 success:function(result){
                 	$('#message').html('');
@@ -126,7 +129,7 @@ $('#passkey').keyup(function(){
             });
 		        $.ajax({
 		        	type: "POST",
-	                url:"http://localhost/passcheck/main/validate",
+	                url:myserver + "main/validate",
 	                data: {password: passwd, type: 'validation'},
 	                success:function(result){
 	                	$('#how').html('');
@@ -156,7 +159,7 @@ $('#passkey').keyup(function(){
 
 		         $.ajax({
 		        	type: "POST",
-	                url:"http://localhost/passcheck/main/dupquery",
+	                url:myserver + "main/dupquery",
 	                data: {password: passwd},
 	                success:function(result){
 	                	$('#hows').html('');
